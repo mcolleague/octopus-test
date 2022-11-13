@@ -25,7 +25,7 @@ const Table = ({ headers = [], data }: TableProps) => {
 
   return (
     <table className={s._}>
-      {headers.length && (
+      {!!headers.length && (
         <thead>
           <tr>
             {headerData.map((header) => (

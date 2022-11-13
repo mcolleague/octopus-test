@@ -38,3 +38,13 @@
     height: 500px;
   }
 }
+
+.section {
+  @include md-down {
+    @include container;
+
+    &--tint-mobile {
+      background-color: var(--hemocyanin);
+    }
+  }
+}
