@@ -21,3 +21,29 @@ export type Product = {
   pk: number
   fields: ProductFields
 }
+
+export type ValueOf<T> = T[keyof T]
+
+export type ActionMap = {
+  Add: {
+    type: 'ADD_TO_CART'
+    payload: { product: Product; quantity: number }
+  }
+  Remove: {
+    type: 'REMOVE_FROM_CART'
+    payload: { productId: number }
+  }
+}
+
+export type ActionPayload<K extends keyof ActionMap> = ActionMap[K]['payload']
+
+export type Action = ValueOf<ActionMap>
+
+export type CartItem = {
+  product: Product
+  quantity: number
+}
+
+export type State = {
+  cart: CartItem[]
+}
