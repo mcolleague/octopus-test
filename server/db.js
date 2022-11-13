@@ -5,6 +5,7 @@ module.exports = {
       pk: 1,
       fields: {
         id: 1,
+        slug: "energy-saving-light-bulb",
         name: "Energy saving light bulb",
         power: "25W",
         description:
