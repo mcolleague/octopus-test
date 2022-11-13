@@ -1,0 +1,7 @@
+@mixin container {
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+  max-width: var(--container-max-w);
+  margin-left: auto;
+  margin-right: auto;
+}

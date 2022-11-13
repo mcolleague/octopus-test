@@ -1,0 +1,5 @@
+@use '@/styles/global/_mixins.scss' as *;
+
+._ {
+  @include container;
+}
