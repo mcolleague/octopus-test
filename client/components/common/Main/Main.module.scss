@@ -1,0 +1,18 @@
+@use '@/styles/global/_mixins.scss' as *;
+
+._ {
+  flex: 1;
+  @include md-up {
+    padding: 2rem 0;
+  }
+
+  &:global {
+    animation: fadeIn 0.4s ease;
+  }
+
+  @at-root [data-page='Home'] & {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

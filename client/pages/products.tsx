@@ -1,6 +1,7 @@
 import { productsQuery } from '../lib/apollo-client'
 import Link from 'next/link'
 import { Product } from '@/types/product'
+import { Page } from '@/components/common'
 
 type Props = {
   products: Product[]
@@ -9,14 +10,14 @@ type Props = {
 const Products = (props: Props) => {
   const { products } = props
   return (
-    <div>
+    <Page title="Products" description="View our products">
       <h1>Our products</h1>
       {products.map(({ pk, fields: { slug, name } }) => (
         <Link key={pk} href={`/products/${slug}`}>
           {name}
         </Link>
       ))}
-    </div>
+    </Page>
   )
 }
 

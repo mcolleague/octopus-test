@@ -9,6 +9,17 @@ body {
   color: var(--ice);
 }
 
+body,
+#__next {
+  display: flex;
+  flex-direction: column;
+}
+
 body {
   background: var(--siphon);
+  min-height: 100vh;
+}
+
+#__next {
+  flex: 1;
 }

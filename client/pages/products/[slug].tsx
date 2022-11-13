@@ -1,5 +1,6 @@
 import { productsQuery } from '../../lib/apollo-client'
 import { Product } from '@/types/product'
+import { Page } from '@/components/common'
 
 type Props = {
   product: Product
@@ -12,7 +13,14 @@ type Context = {
 }
 
 const ProductPage = ({ product }: Props) => {
-  return <div>{product.fields.name}</div>
+  return (
+    <Page
+      title={`${product.fields.name} | Products`}
+      description={product.fields.description}
+    >
+      <div>{product.fields.name}</div>
+    </Page>
+  )
 }
 
 export async function getStaticPaths() {
