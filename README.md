@@ -2,27 +2,15 @@
 
 # Octopus Frontend code test
 
-In this code test, you'll be asked to:
+All `yarn` commands should be made from the `/client` directory.
 
-- Make a simple React app that follows the design in `design.jpg`, consumes the API and makes the front end tests pass. Ideally the app should be responsive.
-
-We've included:
-
-- A sample [Next.js](https://nextjs.org/) project with a Typescript setup for your convenience, but you're welcome to swap it out for another framework if you prefer
-- Some CSS colour variables that match the colours in the design
-- The assets that you will need to complete the design
-
-You're also welcome to write more tests for other parts of the application - but design those however you like.
-
-## Getting started
-
-First you'll need to install your dependencies. We've used yarn, if you have another preference feel free to remove the lock file and use what you are comfortable with:
+## Installation
 
 ```
-cd client && yarn
+yarn
 ```
 
-## Start the app
+## Development
 
 ```
 yarn dev
@@ -33,37 +21,54 @@ This will do two things:
 - Start a Next.js app running in development on http://localhost:3000
 - Start a graphQL stub server running on http://localhost:3001/graphql
 
-## Running tests
-
-You can run tests from the client directory.
+## Testing with Jest
 
 ```
-cd client && yarn test
+yarn test
 ```
 
-This should give you two failures:
+## Visual testing with StoryBook
 
 ```
-FAIL test/product.test.js
-    ✕ should be able to increase and decrease product quantity
-    ✕ should be able to add items to the basket
+yarn storybook
 ```
 
-The task is to build the app that passes these tests.
+## Add a component
 
-## What we're looking for
+```
+yarn generate MyComponentName --dir [component directory]
+```
 
-We would like you to demonstrate your ability to:
+This uses Hygen to generate:
 
-- Reason through a programming problem
-- Implement a visual design
-- Implement some user interactions
-- Write code that is easy to understand and extend
-- Write tests that document and safeguard the program's behaviour
-- Use a version control system (e.g. git) to effectively convey intent
-- Write Typescript typings for the components you create, and also the typings for the GraphQL API response
+- `MyComponentName.tsx`
+- `MyComponentName.module.scss`
+- `MyComponentName.stories.tsx`
+- `MyComponentName.test.tsx` (add a `--with-test` parameter in the command)
+- `index.ts`
 
-Notes:
-- This has not been set up with and type of CSS-in-JS, but if that is something you would like to add, please feel free.
+It also adds an export to the `index.ts` at the root of the given component directory for easier imports.
 
-Best of luck!
+## Build the app
+
+```
+yarn build
+```
+
+And to serve the built app locally, run:
+
+```
+yarn start
+```
+
+These commands also start up the graphQL stub server, since it's being used to generate the product pages at build time. If it complains that you already have the service running, run:
+
+```
+npx kill-port 3001
+```
+
+### To do/next steps
+
+- [ ] Auto-generate types from a graphQL schema
+- [ ] Cross-browser and responsive testing
+- [ ] Add more rigorous unit tests
