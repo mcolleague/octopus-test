@@ -1,5 +1,6 @@
 import { productsQuery } from '../../lib/apollo-client'
 import { Product } from '@/types/product'
+import { ProductSingleView } from '@/components/product'
 import { Page } from '@/components/common'
 
 type Props = {
@@ -18,7 +19,7 @@ const ProductPage = ({ product }: Props) => {
       title={`${product.fields.name} | Products`}
       description={product.fields.description}
     >
-      <div>{product.fields.name}</div>
+      <ProductSingleView product={product} />
     </Page>
   )
 }

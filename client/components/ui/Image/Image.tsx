@@ -5,11 +5,14 @@ type ImageProps = {
   className?: string
   src: string
   alt: string
+  withBackground?: boolean
 }
 
-const Image = ({ src, alt, className }: ImageProps) => {
+const Image = ({ src, alt, withBackground, className }: ImageProps) => {
+  const modifiers = [...(withBackground ? [s[`_--withBg`]] : [])]
+
   return (
-    <div className={cn(s._, className)}>
+    <div className={cn(s._, ...modifiers, className)}>
       <img src={src} alt={alt} />
     </div>
   )

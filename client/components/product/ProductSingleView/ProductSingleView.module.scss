@@ -1,0 +1,34 @@
+@use '@/styles/global/_mixins.scss' as *;
+
+@include md-up {
+  ._ {
+    @include container;
+  }
+
+  .wrapper {
+    @include row;
+  }
+
+  .aside,
+  .content {
+    @include column;
+  }
+
+  .aside {
+    @include col($md, 5);
+    @include col($lg, 4);
+  }
+
+  .content {
+    @include col($md, 5);
+    @include col($lg, 8);
+  }
+}
+
+.image {
+  height: 300px;
+
+  @include md-up {
+    height: 500px;
+  }
+}
