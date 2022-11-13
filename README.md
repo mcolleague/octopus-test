@@ -21,6 +21,18 @@ This will do two things:
 - Start a Next.js app running in development on http://localhost:3000
 - Start a graphQL stub server running on http://localhost:3001/graphql
 
+## Linting & formatting
+
+.vscode config included which will format on save with the prettier extension.
+
+```
+yarn lint
+```
+
+```
+yarn format:fix
+```
+
 ## Testing with Jest
 
 ```
