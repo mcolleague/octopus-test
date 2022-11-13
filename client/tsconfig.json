@@ -19,8 +19,7 @@
       "@/components/*": ["components/*"],
       "@/styles/*": ["styles/*"],
       "@/types/*": ["types/*"]
-    },
-    "types": ["node", "jsdom"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
