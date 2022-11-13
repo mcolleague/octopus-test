@@ -53,6 +53,15 @@ h2 {
   }
 }
 
+a {
+  color: var(--sohoLights);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 [hidden] {
   display: none !important;
 }

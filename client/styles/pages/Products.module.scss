@@ -1,0 +1,21 @@
+.gridItem {
+  figure {
+    height: 300px;
+    margin-bottom: 1rem;
+  }
+  img {
+    transition: transform 300ms ease;
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.dummyGridItem {
+  background: var(--hemocyanin);
+  height: 300px;
+  border-radius: 20px;
+}
