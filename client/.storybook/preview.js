@@ -1,3 +1,6 @@
+import '@/styles/global/global.scss'
+import { CartProvider } from '@/context/cart'
+
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
@@ -7,3 +10,11 @@ export const parameters = {
     },
   },
 }
+
+export const decorators = [
+  (Story) => (
+    <CartProvider>
+      <Story />
+    </CartProvider>
+  ),
+]

@@ -1,8 +1,17 @@
 import { render, fireEvent } from '@testing-library/react'
-import Product from '../pages/product'
+import { default as ProductPage } from '../pages/product'
+import { CartProvider } from '@/context/cart'
+
+const renderPage = () => {
+  return render(
+    <CartProvider>
+      <ProductPage />
+    </CartProvider>
+  )
+}
 
 test('should be able to increase and decrease product quantity', async () => {
-  const { getByText, getByTitle } = render(<Product />)
+  const { getByText, getByTitle } = renderPage()
 
   const increaseQuantity = getByText('+')
 
@@ -19,7 +28,7 @@ test('should be able to increase and decrease product quantity', async () => {
 })
 
 test('should be able to add items to the basket', async () => {
-  const { getByText, getByTitle } = render(<Product />)
+  const { getByText, getByTitle } = renderPage()
 
   const increaseQuantity = getByText('+')
 
