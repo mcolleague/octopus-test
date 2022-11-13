@@ -1,7 +1,9 @@
+import s from '@/styles/pages/Home.module.scss'
+
 export default function Home() {
   return (
     <main>
-      <div className="home">
+      <div className={s._}>
         <figure>
           <img
             src="https://static.octopuscdn.com/logos/logo.svg"
