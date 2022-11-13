@@ -1,0 +1,28 @@
+._ {
+  font-size: 0.9rem;
+
+  td,
+  th {
+    padding: 0.5em 1.5em;
+
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  tr:first-child {
+    th,
+    td {
+      padding-top: 0;
+    }
+  }
+
+  tr:last-child {
+    td {
+      padding-bottom: 0;
+    }
+  }
+}

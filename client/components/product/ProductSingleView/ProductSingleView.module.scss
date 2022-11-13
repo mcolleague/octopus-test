@@ -25,6 +25,12 @@
   }
 }
 
+.aside {
+  @include md-down {
+    @include container;
+  }
+}
+
 .image {
   height: 300px;
 
