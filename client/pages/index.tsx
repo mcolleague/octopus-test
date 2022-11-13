@@ -1,8 +1,10 @@
 import s from '@/styles/pages/Home.module.scss'
+import { Header } from '@/components/common'
 
 export default function Home() {
   return (
     <main>
+      <Header />
       <div className={s._}>
         <figure>
           <img

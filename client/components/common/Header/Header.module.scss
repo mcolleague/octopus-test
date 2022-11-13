@@ -1,0 +1,26 @@
+@use '@/styles/global/_mixins.scss' as *;
+
+._ {
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  background-color: var(--siphon);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart {
+  width: 30px;
+}
+
+.logo {
+  width: 150px;
+
+  @include lg-up {
+    width: 200px;
+  }
+}
