@@ -17,4 +17,5 @@ Default.args = {
 export const Disabled = Template.bind({})
 Disabled.args = {
   children: 'Disabled button',
+  disabled: true,
 }

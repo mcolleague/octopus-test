@@ -13,5 +13,5 @@ export const Default = Template.bind({})
 Default.args = {
   title: 'Page title',
   description: 'Page description',
-  children: <div>Child element</div>,
+  children: <div>Child component</div>,
 }

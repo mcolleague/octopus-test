@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useCartContext } from '@/context/cart'
 import { Product } from '@/types/product'
 import { Image, Heading, Section, Table, Button } from '@/components/ui'
+import { QuantityControl } from '@/components/product'
 import cn from 'clsx'
 import s from './ProductSingleView.module.scss'
 
@@ -52,10 +53,16 @@ const ProductSingleView = ({ product }: ProductSingleViewProps) => {
             />
             <div className={s.cartZone}>
               <div className={s.priceQuantity}>
-                <p className={s.price}>{`£${(
+                <span className={s.price}>{`£${(
                   product.fields.price / 100
-                ).toFixed(2)}`}</p>
+                ).toFixed(2)}`}</span>
+
+                <QuantityControl
+                  quantity={quantity}
+                  setQuantity={setQuantity}
+                />
               </div>
+
               <Button className={s.addToCart} onClick={onAdd}>
                 Add to cart
               </Button>

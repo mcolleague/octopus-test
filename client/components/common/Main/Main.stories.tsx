@@ -11,5 +11,5 @@ const Template: ComponentStory<typeof Main> = (args) => <Main {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  children: <div>Child element</div>,
+  children: <div>Child component</div>,
 }

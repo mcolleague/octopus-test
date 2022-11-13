@@ -8,7 +8,11 @@ const Basket = () => {
   const showQuantity = cart.reduce(toQuantity, 0) > 0
 
   return (
-    <div className={s._} onClick={() => removeFromCart({ productId: 1 })}>
+    <div
+      className={s._}
+      title="Cart"
+      onClick={() => removeFromCart({ productId: 1 })}
+    >
       <div className={s.icon}>
         <img className={s.cart} src="/basket.svg" alt="Shopping basket" />
       </div>

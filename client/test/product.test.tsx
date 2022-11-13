@@ -50,3 +50,22 @@ test('should be able to add items to the basket', async () => {
   const basketItems = getByTitle('Basket items')
   expect(basketItems).toHaveTextContent('4')
 })
+
+test('should be able to clear cart', () => {
+  const { getByText, getByTitle } = renderPage(mockProduct)
+
+  const increaseQuantity = getByText('+')
+
+  const basketItems = getByTitle('Basket items')
+
+  fireEvent.click(increaseQuantity)
+  fireEvent.click(increaseQuantity)
+  fireEvent.click(increaseQuantity)
+
+  const addToBasketElement = getByText('Add to cart')
+  fireEvent.click(addToBasketElement)
+
+  const cartToggle = getByTitle('Cart')
+  fireEvent.click(cartToggle)
+  expect(basketItems).toHaveTextContent('0')
+})
