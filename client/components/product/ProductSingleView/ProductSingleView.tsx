@@ -1,7 +1,9 @@
-import s from './ProductSingleView.module.scss'
+import { useState } from 'react'
+import { useCartContext } from '@/context/cart'
 import { Product } from '@/types/product'
-import { Image, Heading, Section, Table } from '@/components/ui'
+import { Image, Heading, Section, Table, Button } from '@/components/ui'
 import cn from 'clsx'
+import s from './ProductSingleView.module.scss'
 
 type ProductSingleViewProps = {
   product: Product
@@ -18,9 +20,18 @@ const ProductSingleView = ({ product }: ProductSingleViewProps) => {
     model_code,
     colour,
     power,
-    quantity,
+    quantity: productQuantity,
     description,
   } = product.fields
+
+  const { addToCart } = useCartContext()
+  const minQuantity = 1
+  const [quantity, setQuantity] = useState<number>(minQuantity)
+
+  const onAdd = () => {
+    addToCart({ product, quantity })
+    setQuantity(minQuantity)
+  }
 
   return (
     <div className={s._}>
@@ -37,12 +48,26 @@ const ProductSingleView = ({ product }: ProductSingleViewProps) => {
           <Section className={s.section}>
             <Heading
               title={name}
-              subtitle={`${power} // Packet of ${quantity}`}
+              subtitle={`${power} // Packet of ${productQuantity}`}
             />
+            <div className={s.cartZone}>
+              <div className={s.priceQuantity}>
+                <p className={s.price}>{`£${(
+                  product.fields.price / 100
+                ).toFixed(2)}`}</p>
+              </div>
+              <Button className={s.addToCart} onClick={onAdd}>
+                Add to cart
+              </Button>
+            </div>
           </Section>
 
           <Section
-            className={cn(s.section, s['section--tint-mobile'])}
+            className={cn(
+              s.section,
+              s['section--tint-mobile'],
+              s['section--light']
+            )}
             heading="Description"
           >
             <p>{description}</p>

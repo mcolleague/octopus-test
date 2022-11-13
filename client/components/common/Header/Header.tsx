@@ -1,5 +1,6 @@
 import s from './Header.module.scss'
 import { Container, Image } from '@/components/ui'
+import { Basket } from '@/components/product'
 import Link from 'next/link'
 
 const Header = () => {
@@ -16,8 +17,7 @@ const Header = () => {
               />
             </a>
           </Link>
-
-          <Image className={s.cart} src="/basket.svg" alt="Shopping basket" />
+          <Basket />
         </div>
       </Container>
     </header>

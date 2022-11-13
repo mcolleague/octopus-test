@@ -1,0 +1,23 @@
+@use '@/styles/global/_mixins.scss' as *;
+
+._ {
+  background-color: var(--sohoLights);
+  color: var(--siphon);
+  border-radius: 8px;
+  padding: 0.9em 1em;
+  line-height: 1.3;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+
+  &[disabled] {
+    opacity: 0.5;
+    color: white;
+    cursor: not-allowed;
+  }
+
+  &:not([disabled]):hover {
+    background-color: #f871ff;
+  }
+}

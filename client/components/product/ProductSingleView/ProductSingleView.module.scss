@@ -39,12 +39,39 @@
   }
 }
 
+.cartZone {
+  @include md-up {
+    max-width: 300px;
+  }
+}
+
+.priceQuantity {
+  margin: 1rem 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.price {
+  font-size: 1.25rem;
+}
+
+.addToCart {
+  width: 100%;
+}
+
 .section {
   @include md-down {
     @include container;
 
     &--tint-mobile {
       background-color: var(--hemocyanin);
+    }
+    &--light {
+      p {
+        font-size: 0.85rem;
+        font-weight: 300;
+      }
     }
   }
 }

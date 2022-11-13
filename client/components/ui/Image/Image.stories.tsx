@@ -18,3 +18,10 @@ Default.args = {
   src: 'https://i.ibb.co/2nzwxnQ/bulb.png',
   alt: 'Product image example',
 }
+
+export const WithBackground = Template.bind({})
+WithBackground.args = {
+  src: 'https://i.ibb.co/2nzwxnQ/bulb.png',
+  alt: 'Product image example',
+  withBackground: true,
+}

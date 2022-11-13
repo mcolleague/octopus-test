@@ -1,0 +1,39 @@
+@use '@/styles/global/_mixins.scss' as *;
+
+._ {
+  position: relative;
+  cursor: pointer;
+}
+
+.icon {
+  width: 25px;
+
+  @include lg-up {
+    width: 30px;
+  }
+}
+
+.quantity {
+  position: absolute;
+  bottom: -20%;
+  right: -2%;
+  border-radius: 50%;
+  background-color: var(--sohoLights);
+  color: var(--siphon);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.5rem;
+  font-weight: 600;
+  width: 0.3em;
+  height: 0.3em;
+  padding: 0.9em;
+
+  &:global {
+    animation: scaleIn 200ms ease;
+  }
+
+  @include lg-up {
+    font-size: 0.7rem;
+  }
+}

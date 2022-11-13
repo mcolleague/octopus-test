@@ -11,7 +11,7 @@ const Heading = ({ level = 1, title, subtitle }: HeadingProps) => {
     <>
       {/* level prop could be used to render different tags... */}
       <h1 className={s._}>{title}</h1>
-      {subtitle && <p className={s.subtitle}>{subtitle}</p>}
+      {subtitle && <h4 className={s.subtitle}>{subtitle}</h4>}
     </>
   )
 }
